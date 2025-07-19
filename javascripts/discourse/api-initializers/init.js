@@ -15,7 +15,7 @@ export default apiInitializer((api) => {
   api.decorateCookedElement((element, helper) => {
     let apiKey = settings.desmos_api_key;
     let graphParent = element.querySelector('[data-wrap="desmos-graph"]');
-    let graphEq = graph.textContent;
+    let graphEq = graphParent.textContent;
     loadScript(`https://www.desmos.com/api/v1.11/calculator.js?apiKey=${apiKey}`).then(() => {
       let graphEmbed = element.createElement("div");
       graphEmbed.id = "graph";
