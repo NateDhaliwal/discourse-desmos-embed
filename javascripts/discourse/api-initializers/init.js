@@ -22,9 +22,9 @@ export default apiInitializer((api) => {
       graphParent.appendChild(graphEmbed);
       let calculator = Desmos.GraphingCalculator(graphEmbed);
       calculator.setExpression({
-           id: 'graph1',
-           latex: graphEq.toString()
-       });
+        id: 'graph1',
+        latex: graphEq.toString()
+      });
     });
   });
 });
