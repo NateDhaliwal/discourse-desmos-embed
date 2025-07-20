@@ -1,2 +1,2 @@
-example_setting:
-  default: true
+desmos_api_key:
+  type: string
