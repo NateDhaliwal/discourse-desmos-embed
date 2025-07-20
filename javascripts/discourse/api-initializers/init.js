@@ -8,7 +8,7 @@ export default apiInitializer((api) => {
       group: 'extras',
       icon: 'chart-line',
       title: 'pop_format.title',
-      perform: (e) => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', 'add_desmos_graph')
+      perform: e => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', 'add_desmos_graph')
     });
   });
 
