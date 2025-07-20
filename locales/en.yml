@@ -1,5 +1,5 @@
 en:
   theme_metadata:
-    description: "TODO"
+    description: "Embed Desmos graphs into topics and replies"
     settings:
-      example_setting: "A description of a setting."
+      desmos_api_key: "Your desmos API key"
