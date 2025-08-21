@@ -2,7 +2,7 @@ import { apiInitializer } from "discourse/lib/api";
 import loadScript from "discourse/lib/load-script";
 
 export default apiInitializer((api) => {
-  api.onToolBarCreate(toolbar => {
+  api.onToolbarCreate(toolbar => {
     toolbar.addButton({
       id: 'add-desmos',
       group: 'extras',
