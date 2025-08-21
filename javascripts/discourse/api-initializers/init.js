@@ -15,16 +15,18 @@ export default apiInitializer((api) => {
   api.decorateCookedElement((element, helper) => {
     let apiKey = settings.desmos_api_key;
     let graphParent = element.querySelector('[data-wrap="desmos-graph"]');
-    let graphEq = graphParent.textContent;
-    loadScript(`https://www.desmos.com/api/v1.11/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6`).then(() => {
-      let graphEmbed = element.createElement("div");
-      graphEmbed.id = "graph";
-      graphParent.appendChild(graphEmbed);
-      let calculator = Desmos.GraphingCalculator(graphEmbed);
-      calculator.setExpression({
-        id: 'graph1',
-        latex: graphEq.toString()
+    if (graphParent !== null) {
+      let graphEq = graphParent.textContent;
+      loadScript(`https://www.desmos.com/api/v1.11/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6`).then(() => {
+        let graphEmbed = element.createElement("div");
+        graphEmbed.id = "graph";
+        graphParent.appendChild(graphEmbed);
+        let calculator = Desmos.GraphingCalculator(graphEmbed);
+        calculator.setExpression({
+          id: 'graph1',
+          latex: graphEq.toString()
+        });
       });
-    });
+    }
   });
 });
