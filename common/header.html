@@ -2,8 +2,9 @@
 
 <script>
 let graphParentAll = document.querySelector('[data-wrap="desmos-graph"]');
+console.log(graphParentAll);
 if (graphParentAll !== null) {
-  let graphParentArray = [...graphParent];
+  let graphParentArray = [...graphParentAll];
   console.log(graphParentArray);
   graphParentArray.forEach(graphParent => {
     let graphEq = graphParent.textContent;
