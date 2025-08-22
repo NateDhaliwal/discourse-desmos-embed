@@ -1,7 +1,3 @@
-desmos_api_key:
-  default: ""
-  type: string
-
-desmos_graph_equation_placeholder:
+graph_equation_placeholder:
   default: ""
   type: string
