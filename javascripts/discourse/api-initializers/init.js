@@ -18,7 +18,7 @@ export default apiInitializer((api) => {
   });
   
   api.decorateCookedElement((element, helper) => {
-    let graphParentAll = element.querySelectorAll('div[data-wrap="graph-embed"]');
+    let graphParentAll = document.querySelectorAll('div[data-wrap="graph-embed"]');
     console.log(graphParentAll);
     if (graphParentAll !== null) {
       loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
