@@ -4,7 +4,7 @@ import I18n from "I18n";
 
 export default apiInitializer((api) => {
   const curentLocale = I18n.currentLocale();
-  console.log(currentLocal);
+  console.log(currentLocale);
   I18n.translations[currentLocale].js.composer.desmos.add_desmos_graph_equation = "Add equation";
   api.onToolbarCreate(toolbar => {
     toolbar.addButton({
