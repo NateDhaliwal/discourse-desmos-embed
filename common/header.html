@@ -1,1 +1,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js" integrity="sha512-Exmn7g+rQjLX+1LMhM+BiNNNwSQy782sUEWLadXHdDez6kjwpZ04vCsxZ5dpbo/oOhWdWrMf+JH5CTA8nF+6lQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+let graphParent = document.querySelector('[data-wrap="desmos-graph"]');
+if (graphParent !== null) {
+  let graphEq = graphParent.textContent;
+  let graphEmbed = document.createElement("div");
+  graphEmbed.id = "graph";
+  graphParent.appendChild(graphEmbed);
+  functionPlot({
+    target: '#graph',
+    data: [
+      {
+        fn: graphEq,
+      }
+    ]
+  });
+}
+</script>
