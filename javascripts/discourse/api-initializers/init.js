@@ -1,5 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
 import loadScript from "discourse/lib/load-script";
+import I18n from "I18n";
 
 export default apiInitializer((api) => {
   api.onToolbarCreate(toolbar => {
@@ -7,8 +8,8 @@ export default apiInitializer((api) => {
       id: 'add-desmos',
       group: 'extras',
       icon: 'chart-line',
-      title: 'pop_format.title',
-      perform: e => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', 'add_desmos_graph_equation') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
+      title: themePrefix('desmos.desmos_title'),
+      perform: e => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', themePrefix('desmos.add_desmos_graph_equation')) // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
     });
   });
 
