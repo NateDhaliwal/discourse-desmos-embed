@@ -3,16 +3,14 @@ import loadScript from "discourse/lib/load-script";
 import I18n from "I18n";
 
 export default apiInitializer((api) => {
-  const currentLocale = I18n.currentLocale();
-  console.log(currentLocale);
-  I18n.translations[currentLocale].js.composer.desmos.add_desmos_graph_equation = "Add equation";
+  I18n.translations["en"].js.composer.add_desmos_graph_equation = "Add equation";
   api.onToolbarCreate(toolbar => {
     toolbar.addButton({
       id: 'add-desmos',
       group: 'extras',
       icon: 'chart-line',
       title: themePrefix('desmos.desmos_button_title'),
-      perform: e => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', 'desmos.add_desmos_graph_equation') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
+      perform: e => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', 'add_desmos_graph_equation') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
     });
   });
 
