@@ -1,6 +1,7 @@
 en:
-  js:
+  desmos:
     add_desmos_graph_equation: "Insert equation"
+    desmos_button_title: "Insert Desmos Graph"
 
   theme_metadata:
     description: "Embed Desmos graphs into topics and replies"
