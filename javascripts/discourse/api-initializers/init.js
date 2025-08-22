@@ -1,6 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 import loadScript from "discourse/lib/load-script";
 import I18n from "I18n";
+import functionPlot from "function-plot";
 
 export default apiInitializer((api) => {
   const currentLocale = I18n.currentLocale();
@@ -23,11 +24,16 @@ export default apiInitializer((api) => {
       let graphEmbed = document.createElement("div");
       graphEmbed.id = "graph";
       graphParent.appendChild(graphEmbed);
+      
       functionPlot({
-        target: '#graph',
+        target: "#graph",
+        width,
+        height,
+        yAxis: { domain: [-1, 9] },
+        grid: true,
         data: [
           {
-            fn: graphEq,
+            fn: "x^2"
           }
         ]
       });
