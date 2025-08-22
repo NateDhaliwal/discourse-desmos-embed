@@ -1,6 +1,8 @@
 en:
+  js:
+    composer:
+      add_desmos_graph_equation: "Insert equation"
   desmos:
-    add_desmos_graph_equation: "Insert equation"
     desmos_button_title: "Insert Desmos Graph"
 
   theme_metadata:
