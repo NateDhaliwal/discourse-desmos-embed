@@ -4,6 +4,7 @@
 let graphParentAll = document.querySelector('[data-wrap="desmos-graph"]');
 if (graphParentAll !== null) {
   let graphParentArray = [...graphParent];
+  console.log(graphParentArray);
   graphParentArray.forEach(graphParent => {
     let graphEq = graphParent.textContent;
     let graphEmbed = document.createElement("div");
@@ -13,7 +14,7 @@ if (graphParentAll !== null) {
       target: '#graph-embed',
       data: [
         {
-          fn: graphEq,
+          fn: graphEq
         }
       ]
     });
