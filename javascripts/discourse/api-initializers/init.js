@@ -5,20 +5,20 @@ import I18n from "I18n";
 
 export default apiInitializer((api) => {
   const currentLocale = I18n.currentLocale();
-  I18n.translations[currentLocale].js.composer.desmos_graph_equation_placeholder = settings.desmos_graph_equation_placeholder;
+  I18n.translations[currentLocale].js.composer.graph_equation_placeholder = settings.graph_equation_placeholder;
   
   api.onToolbarCreate(toolbar => {
     toolbar.addButton({
-      id: 'add-desmos',
+      id: 'add-graph',
       group: 'extras',
       icon: 'chart-line',
-      title: themePrefix('desmos.desmos_button_title'),
-      perform: e => e.applySurround('[wrap="graph-embed"]\n', '\n[/wrap]', 'desmos_graph_equation_placeholder') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
+      title: themePrefix('graph.graph_button_title'),
+      perform: e => e.applySurround('[wrap="graph-embed"]\n', '\n[/wrap]', 'graph_equation_placeholder') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
     });
   });
   
   api.decorateCookedElement((element, helper) => {
-    let graphParentAll = document.querySelectorAll('div[data-wrap="graph-embed"]');
+    let graphParentAll = element.querySelectorAll('div[data-wrap="graph-embed"]');
     console.log(graphParentAll);
     if (graphParentAll !== null) {
       loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
