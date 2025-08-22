@@ -21,8 +21,8 @@ export default apiInitializer((api) => {
     let graphParentAll = element.querySelectorAll('div[data-wrap="graph-embed"]');
     console.log(graphParentAll);
     if (graphParentAll !== null) {
-      loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
-      loadScript("https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js");
+      // loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
+      // loadScript("https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js");
       let graphParentArray = [...graphParentAll];
       console.log(graphParentArray);
       graphParentArray.forEach(graphParent => {
