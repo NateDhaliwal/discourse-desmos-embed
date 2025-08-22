@@ -1,7 +1,4 @@
 en:
-  js:
-    composer:
-      add_desmos_graph_equation: "Insert equation"
   desmos:
     desmos_button_title: "Insert Desmos Graph"
 
