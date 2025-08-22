@@ -1,9 +1,8 @@
 en:
   desmos:
-    desmos_button_title: "Insert Desmos Graph"
+    desmos_button_title: "Insert Graph"
 
   theme_metadata:
-    description: "Embed Desmos graphs into topics and replies"
+    description: "Embed graphs into topics and replies"
     settings:
-      desmos_api_key: "Your desmos API key"
-      desmos_graph_equation_placeholder: "Placeholder equation for graph"
+      graph_equation_placeholder: "Placeholder equation for graph"
