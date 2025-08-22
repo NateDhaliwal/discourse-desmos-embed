@@ -15,7 +15,7 @@ export default apiInitializer((api) => {
       perform: e => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', 'desmos_graph_equation_placeholder') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
     });
   });
-
+  /*
   api.decorateCookedElement((element, helper) => {
     let apiKey = settings.desmos_api_key;
     let graphParent = element.querySelector('[data-wrap="desmos-graph"]');
@@ -31,4 +31,5 @@ export default apiInitializer((api) => {
       });
     }
   });
+  */
 });
