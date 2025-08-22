@@ -1,7 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 import loadScript from "discourse/lib/load-script";
 import I18n from "I18n";
-import functionPlot from "function-plot";
+//import functionPlot from "function-plot";
 
 export default apiInitializer((api) => {
   const currentLocale = I18n.currentLocale();
@@ -21,6 +21,8 @@ export default apiInitializer((api) => {
     let graphParentAll = document.querySelector('[data-wrap="desmos-graph"]');
     console.log(graphParentAll);
     if (graphParentAll !== null) {
+      loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
+      loadScript("https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js");
       let graphParentArray = [...graphParentAll];
       console.log(graphParentArray);
       graphParentArray.forEach(graphParent => {
