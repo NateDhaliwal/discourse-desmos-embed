@@ -18,7 +18,7 @@ export default apiInitializer((api) => {
   });
   
   api.decorateCookedElement((element, helper) => {
-    let graphParentAll = document.querySelector('[data-wrap="desmos-graph"]');
+    let graphParentAll = element.querySelector('[data-wrap="desmos-graph"]');
     console.log(graphParentAll);
     if (graphParentAll !== null) {
       loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
