@@ -6,3 +6,4 @@ en:
     description: "Embed Desmos graphs into topics and replies"
     settings:
       desmos_api_key: "Your desmos API key"
+      desmos_graph_equation_placeholder: "Placeholder equation for graph"
