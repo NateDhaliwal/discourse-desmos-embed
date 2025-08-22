@@ -22,7 +22,7 @@ export default apiInitializer((api) => {
     if (graphParent !== null) {
       let graphEq = graphParent.textContent;
       loadScript(`https://www.desmos.com/api/v1.11/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6`).then(() => {
-        let graphEmbed = element.createElement("div");
+        let graphEmbed = document.createElement("div");
         graphEmbed.id = "graph";
         graphParent.appendChild(graphEmbed);
         let calculator = Desmos.GraphingCalculator(graphEmbed);
