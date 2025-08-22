@@ -3,7 +3,7 @@ import loadScript from "discourse/lib/load-script";
 import I18n from "I18n";
 
 export default apiInitializer((api) => {
-  I18n.translations["en"].js.composer.add_desmos_graph_equation = "Add equation";
+  //I18n.translations["en"].js.composer.add_desmos_graph_equation = "Add equation";
   api.onToolbarCreate(toolbar => {
     toolbar.addButton({
       id: 'add-desmos',
