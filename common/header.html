@@ -1,16 +1,1 @@
-<script src="https://www.desmos.com/api/v1.11/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
 
-<script>
-  let graphParent = document.querySelector('[data-wrap="desmos-graph"]');
-  if (graphParent !== null) {
-    let graphEq = graphParent.textContent;
-    let graphEmbed = document.createElement("div");
-    graphEmbed.id = "graph";
-    graphParent.appendChild(graphEmbed);
-    let calculator = Desmos.GraphingCalculator(graphEmbed);
-    calculator.setExpression({
-      id: 'graph1',
-      latex: graphEq.toString()
-    });
-  }
-</script>
