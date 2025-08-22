@@ -1,6 +1,7 @@
 en:
-  composer:
-    add_desmos_graph_equation: "Insert equation"
+  js:
+    composer:
+      add_desmos_graph_equation: "Insert equation"
 
   theme_metadata:
     description: "Embed Desmos graphs into topics and replies"
