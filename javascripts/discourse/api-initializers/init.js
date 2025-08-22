@@ -15,21 +15,23 @@ export default apiInitializer((api) => {
       perform: e => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', 'desmos_graph_equation_placeholder') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
     });
   });
-  /*
+  
   api.decorateCookedElement((element, helper) => {
-    let apiKey = settings.desmos_api_key;
     let graphParent = element.querySelector('[data-wrap="desmos-graph"]');
     if (graphParent !== null) {
       let graphEq = graphParent.textContent;
       let graphEmbed = document.createElement("div");
       graphEmbed.id = "graph";
       graphParent.appendChild(graphEmbed);
-      let calculator = Desmos.GraphingCalculator(graphEmbed);
-      calculator.setExpression({
-        id: 'graph1',
-        latex: graphEq.toString()
+      functionPlot({
+        target: '#graph',
+        data: [
+          {
+            fn: graphEq,
+          }
+        ]
       });
     }
   });
-  */
+  
 });
