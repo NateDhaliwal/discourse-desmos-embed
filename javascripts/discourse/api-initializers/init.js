@@ -13,12 +13,12 @@ export default apiInitializer((api) => {
       group: 'extras',
       icon: 'chart-line',
       title: themePrefix('desmos.desmos_button_title'),
-      perform: e => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', 'desmos_graph_equation_placeholder') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
+      perform: e => e.applySurround('[wrap="graph-embed"]\n', '\n[/wrap]', 'desmos_graph_equation_placeholder') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
     });
   });
   
   api.decorateCookedElement((element, helper) => {
-    let graphParentAll = element.querySelector('[data-wrap="desmos-graph"]');
+    let graphParentAll = element.querySelector('div[data-wrap="graph-embed"]');
     console.log(graphParentAll);
     if (graphParentAll !== null) {
       loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
