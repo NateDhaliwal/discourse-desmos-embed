@@ -9,7 +9,7 @@ export default apiInitializer((api) => {
       group: 'extras',
       icon: 'chart-line',
       title: themePrefix('desmos.desmos_button_title'),
-      perform: e => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', themePrefix('desmos.add_desmos_graph_equation')) // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
+      perform: e => e.applySurround('[wrap="desmos-graph"]\n', '\n[/wrap]', 'desmos.add_desmos_graph_equation') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
     });
   });
 
