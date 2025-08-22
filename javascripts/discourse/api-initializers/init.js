@@ -18,26 +18,29 @@ export default apiInitializer((api) => {
   });
   
   api.decorateCookedElement((element, helper) => {
-    let graphParent = element.querySelector('[data-wrap="desmos-graph"]');
-    if (graphParent !== null) {
-      let graphEq = graphParent.textContent;
-      let graphEmbed = document.createElement("div");
-      graphEmbed.id = "graph";
-      graphParent.appendChild(graphEmbed);
-      
-      functionPlot({
-        target: "#graph",
-        width,
-        height,
-        yAxis: { domain: [-1, 9] },
-        grid: true,
-        data: [
-          {
-            fn: "x^2"
-          }
-        ]
-      });
+    let graphParentAll = document.querySelector('[data-wrap="desmos-graph"]');
+    console.log(graphParentAll);
+    if (graphParentAll !== null) {
+      let graphParentArray = [...graphParentAll];
+      console.log(graphParentArray);
+      graphParentArray.forEach(graphParent => {
+        let graphEq = graphParent.textContent;
+        let graphEmbed = document.createElement("div");
+        graphEmbed.id = "graph";
+        graphParent.appendChild(graphEmbed);
+        
+        functionPlot({
+          target: "#graph",
+          500,
+          500,
+          grid: true,
+          data: [
+            {
+              fn: "x^2"
+            }
+          ]
+        });
+      }
     }
   });
-  
 });
