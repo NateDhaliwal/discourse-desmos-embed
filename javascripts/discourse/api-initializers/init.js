@@ -31,8 +31,8 @@ export default apiInitializer((api) => {
         
         functionPlot({
           target: "#graph",
-          500,
-          500,
+          width: 500,
+          height: 500,
           grid: true,
           data: [
             {
