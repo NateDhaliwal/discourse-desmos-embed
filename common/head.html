@@ -1,23 +1,2 @@
 <script src="https://unpkg.com/function-plot/dist/function-plot.js"></script>
-<script>
-let graphParentAll = document.querySelector('[data-wrap="desmos-graph"]');
-console.log(graphParentAll);
-if (graphParentAll !== null) {
-  let graphParentArray = [...graphParentAll];
-  console.log(graphParentArray);
-  graphParentArray.forEach(graphParent => {
-    let graphEq = graphParent.textContent;
-    let graphEmbed = document.createElement("div");
-    graphEmbed.id = "graph-embed";
-    graphParent.appendChild(graphEmbed);
-    functionPlot({
-      target: '#graph-embed',
-      data: [
-        {
-          fn: graphEq,
-        }
-      ],
-    });
-  });
-}
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js" integrity="sha512-Exmn7g+rQjLX+1LMhM+BiNNNwSQy782sUEWLadXHdDez6kjwpZ04vCsxZ5dpbo/oOhWdWrMf+JH5CTA8nF+6lQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
