@@ -52,8 +52,7 @@ export default apiInitializer((api) => {
           Plotly.newPlot('graph', data);
         }
         catch (err) {
-          console.error(err)
-          alert(err)
+          console.error(err);
         }
         
       });
