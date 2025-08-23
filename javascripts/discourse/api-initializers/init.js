@@ -17,48 +17,47 @@ export default apiInitializer((api) => {
   });
   api.onPageChange((url, title) => {
     const router = api.container.lookup('service:router');
-    console.log(router.currentRoute.name.toString() === "topic.fromParamsNear" || "topic.fromParams");
-  });
-  api.decorateCookedElement((element, helper) => {
-    let graphParentAll = element.querySelectorAll('div[data-wrap="graph-embed"]');
-    console.log(graphParentAll);
-    if (graphParentAll !== null) {
-      // loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
-      // loadScript("https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js");
-      let graphParentArray = [...graphParentAll];
-      console.log(graphParentArray);
-      graphParentArray.forEach(graphParent => {
-        let graphEq = graphParent.textContent;
-        console.log(typeof graphEq);
-        let graphEmbed = document.createElement("div");
-        graphEmbed.id = "graph";
-        graphParent.appendChild(graphEmbed);
-        
-        try {
-          // compile the expression once
-          const expression = graphEq;
-          const expr = math.compile(expression);
-    
-          // evaluate the expression repeatedly for different values of x
-          const xValues = math.range(-10, 10, 0.5).toArray();
-          const yValues = xValues.map(function (x) {
-            return expr.evaluate({x: x});
-          });
-    
-          // render the plot using plotly
-          const trace1 = {
-            x: xValues,
-            y: yValues,
-            type: 'scatter'
-          };
-          const data = [trace1];
-          Plotly.newPlot('graph', data);
-        }
-        catch (err) {
-          console.error(err);
-        }
-        
-      });
+    if (router.currentRoute.name.toString() === "topic.fromParamsNear") {
+      let graphParentAll = element.querySelectorAll('div[data-wrap="graph-embed"]');
+      console.log(graphParentAll);
+      if (graphParentAll !== null) {
+        // loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
+        // loadScript("https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js");
+        let graphParentArray = [...graphParentAll];
+        console.log(graphParentArray);
+        graphParentArray.forEach(graphParent => {
+          let graphEq = graphParent.textContent;
+          console.log(typeof graphEq);
+          let graphEmbed = document.createElement("div");
+          graphEmbed.id = "graph";
+          graphParent.appendChild(graphEmbed);
+          
+          try {
+            // compile the expression once
+            const expression = graphEq;
+            const expr = math.compile(expression);
+      
+            // evaluate the expression repeatedly for different values of x
+            const xValues = math.range(-10, 10, 0.5).toArray();
+            const yValues = xValues.map(function (x) {
+              return expr.evaluate({x: x});
+            });
+      
+            // render the plot using plotly
+            const trace1 = {
+              x: xValues,
+              y: yValues,
+              type: 'scatter'
+            };
+            const data = [trace1];
+            Plotly.newPlot('graph', data);
+          }
+          catch (err) {
+            console.error(err);
+          }
+          
+        });
+      }
     }
   });
 });
