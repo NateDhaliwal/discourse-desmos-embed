@@ -1,6 +1,6 @@
 en:
-  desmos:
-    desmos_button_title: "Insert Graph"
+  graph:
+    graph_button_title: "Insert Graph"
 
   theme_metadata:
     description: "Embed graphs into topics and replies"
