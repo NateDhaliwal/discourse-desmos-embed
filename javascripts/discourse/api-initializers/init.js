@@ -1,7 +1,6 @@
 import { apiInitializer } from "discourse/lib/api";
 import loadScript from "discourse/lib/load-script";
 import I18n from "I18n";
-//import functionPlot from "function-plot";
 
 export default apiInitializer((api) => {
   const currentLocale = I18n.currentLocale();
@@ -32,19 +31,30 @@ export default apiInitializer((api) => {
         graphEmbed.id = "graph";
         graphParent.appendChild(graphEmbed);
         
-        functionPlot({
-          target: "#graph",
-          grid: true,
-          data: [
-            {
-              fn: 'x^2',
-              derivative: {
-                fn: '2*x',
-                updateOnMouseMove: true
-              }
-            }
-          ]
-        });
+        try {
+          // compile the expression once
+          const expression = graphEq;
+          const expr = math.compile(expression);
+    
+          // evaluate the expression repeatedly for different values of x
+          const xValues = math.range(-10, 10, 0.5).toArray();
+          const yValues = xValues.map(function (x) {
+            return expr.evaluate({x: x});
+          });
+    
+          // render the plot using plotly
+          const trace1 = {
+            x: xValues,
+            y: yValues,
+            type: 'scatter'
+          };
+          const data = [trace1];
+          Plotly.newPlot('graph', data);
+        }
+        catch (err) {
+          console.error(err)
+          alert(err)
+        }
         
       });
     }
