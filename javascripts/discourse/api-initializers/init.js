@@ -18,7 +18,7 @@ export default apiInitializer((api) => {
   api.onPageChange((url, title) => {
     const router = api.container.lookup('service:router');
     if (router.currentRoute.name.toString() === "topic.fromParamsNear") {
-      let graphParentAll = element.querySelectorAll('div[data-wrap="graph-embed"]');
+      let graphParentAll = document.querySelectorAll('div[data-wrap="graph-embed"]');
       console.log(graphParentAll);
       if (graphParentAll !== null) {
         // loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
