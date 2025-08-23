@@ -17,7 +17,7 @@ export default apiInitializer((api) => {
   });
   api.onPageChange((url, title) => {
     const router = api.container.lookup('service:router');
-    console.log(router.currentRoute.name.toString()/* == "topics.fromParamsNear"*/);
+    console.log(router.currentRoute.name.toString() === "topic.fromParamsNear" || "topic.fromParams");
   });
   api.decorateCookedElement((element, helper) => {
     let graphParentAll = element.querySelectorAll('div[data-wrap="graph-embed"]');
