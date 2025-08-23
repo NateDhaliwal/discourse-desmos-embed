@@ -38,7 +38,7 @@ export default apiInitializer((api) => {
           grid: true,
           data: [
             {
-              fn: graphEq.toString()
+              fn: graphEq,
             }
           ]
         });
