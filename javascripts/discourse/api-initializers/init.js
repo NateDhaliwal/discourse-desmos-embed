@@ -15,7 +15,10 @@ export default apiInitializer((api) => {
       perform: e => e.applySurround('[wrap="graph-embed"]\n', '\n[/wrap]', 'graph_equation_placeholder') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
     });
   });
-  
+  api.onPageChange((url, title) =>{
+    const router = api.container.lookup('service:router');
+    console.log(router.currentRoute.name);
+  }
   api.decorateCookedElement((element, helper) => {
     let graphParentAll = element.querySelectorAll('div[data-wrap="graph-embed"]');
     console.log(graphParentAll);
