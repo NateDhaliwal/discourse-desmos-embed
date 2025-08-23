@@ -27,7 +27,7 @@ export default apiInitializer((api) => {
       console.log(graphParentArray);
       graphParentArray.forEach(graphParent => {
         let graphEq = graphParent.textContent;
-        console.log(graphEq);
+        console.log(typeof graphEq);
         let graphEmbed = document.createElement("div");
         graphEmbed.id = "graph";
         graphParent.appendChild(graphEmbed);
