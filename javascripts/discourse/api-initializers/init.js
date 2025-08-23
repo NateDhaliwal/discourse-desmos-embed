@@ -34,14 +34,16 @@ export default apiInitializer((api) => {
         
         functionPlot({
           target: "#graph",
-          width: 500,
-          height: 500,
           grid: true,
           data: [
             {
-              fn: graphEq,
+              fn: 'x^2',
+              derivative: {
+                fn: '2*x',
+                updateOnMouseMove: true
+              }
             }
-          ],
+          ]
         });
         
       });
