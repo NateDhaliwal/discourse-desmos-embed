@@ -15,10 +15,8 @@ export default apiInitializer((api) => {
       perform: e => e.applySurround('[wrap="graph-embed"]\n', '\n[/wrap]', 'graph_equation_placeholder') // add_desmos_graph_euqation is a locale string: edit the text in locales/en.yml.
     });
   });
-  api.onPageChange((url, title) => {
-    const router = api.container.lookup('service:router');
-    if (router.currentRoute.name.toString() === "topic.fromParamsNear") {
-      let graphParentAll = document.querySelectorAll('div[data-wrap="graph-embed"]');
+  api.decorateCookedElement((element, helper) => {
+      let graphParentAll = element.querySelectorAll('div[data-wrap="graph-embed"]');
       console.log(graphParentAll);
       if (graphParentAll !== null) {
         // loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
@@ -42,7 +40,8 @@ export default apiInitializer((api) => {
             const yValues = xValues.map(function (x) {
               return expr.evaluate({x: x});
             });
-      
+            console.log(xValues);
+            console.log(yValues);
             // render the plot using plotly
             const trace1 = {
               x: xValues,
