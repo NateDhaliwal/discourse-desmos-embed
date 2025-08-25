@@ -23,7 +23,7 @@ export default apiInitializer((api) => {
         // loadScript("https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js");
         let graphParentArray = [...graphParentAll];
         console.log(graphParentArray);
-        graphParentArray.forEach(graphParent => {
+        //graphParentArray.forEach(graphParent => {
           let graphEq = graphParent.textContent;
           console.log(typeof graphEq);
           let graphEmbed = document.createElement("div");
@@ -48,6 +48,9 @@ export default apiInitializer((api) => {
               y: yValues,
               type: 'scatter'
             };
+            setTimeout(() => {
+              console.log("Waited 5 seconds!");
+            }, 5000); // 5000 milliseconds = 5 seconds
             const data = [trace1];
             Plotly.newPlot('graph', data);
           }
@@ -55,7 +58,7 @@ export default apiInitializer((api) => {
             console.error(err);
           }
           
-        });
+        //});
       }
     }
   });
