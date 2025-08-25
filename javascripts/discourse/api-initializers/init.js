@@ -26,8 +26,8 @@ export default apiInitializer((api) => {
       console.log(graphParentArray);
 
       graphParentArray.forEach(graphParent => {
-        let graphEq = graphParent.textContent;
-        console.log(typeof graphEq);
+        let graphEq = graphParent.textContent.trim();
+        console.log("Raw equation: " + graphEq);
         let graphEmbed = document.createElement("div");
         graphEmbed.id = `graph-${graphParentArray.indexOf(graphParent)}`;
         graphParent.appendChild(graphEmbed);
@@ -42,8 +42,8 @@ export default apiInitializer((api) => {
           const yValues = xValues.map(function (x) {
             return expr.evaluate({x: x});
           });
-          console.log(xValues);
-          console.log(yValues);
+          console.log("x-values: " + xValues);
+          console.log("y-values: " + yValues);
           // render the plot using plotly
           const trace1 = {
             x: xValues,
