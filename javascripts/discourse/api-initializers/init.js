@@ -40,12 +40,12 @@ export default apiInitializer((api) => {
         try {
           // Compile the expression
           const expression = graphEq;
-          const expr = math.compile(expression);
+          const expr = math.compile(expression); // eslint-disable-line no-undef
 
           // Evaluate the expression/equation repeatedly for different values of x
-          const xValues = math.range(-10, 10, 0.5).toArray();
+          const xValues = math.range(-10, 10, 0.5).toArray(); // eslint-disable-line no-undef
           const yValues = xValues.map(function (x) {
-            return expr.evaluate({ x: x });
+            return expr.evaluate({ x });
           });
 
           // Render the plot using Plotly
@@ -57,7 +57,7 @@ export default apiInitializer((api) => {
           const data = [trace1];
 
           // Plot the graph
-          Plotly.newPlot(graphEmbed, data);
+          Plotly.newPlot(graphEmbed, data); // eslint-disable-line no-undef
         } catch {
           // Do nothing
         }
