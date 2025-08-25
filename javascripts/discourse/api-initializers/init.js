@@ -21,7 +21,7 @@ export default apiInitializer((api) => {
     });
   });
 
-  api.decorateCookedElement((element, helper) => {
+  api.decorateCookedElement((element) => {
     let graphParentAll = element.querySelectorAll(
       'div[data-wrap="graph-embed"]'
     );
@@ -58,7 +58,9 @@ export default apiInitializer((api) => {
 
           // Plot the graph
           Plotly.newPlot(graphEmbed, data);
-        } catch (err) {}
+        } catch {
+          // Do nothing
+        }
       });
     }
   });
