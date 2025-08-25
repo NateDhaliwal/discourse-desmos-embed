@@ -18,16 +18,14 @@ export default apiInitializer((api) => {
   
   api.decorateCookedElement((element, helper) => {
     let graphParentAll = element.querySelectorAll('div[data-wrap="graph-embed"]');
-    console.log(graphParentAll);
+
     if (graphParentAll !== null) {
       // loadScript("https://unpkg.com/function-plot/dist/function-plot.js");
       // loadScript("https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js");
       let graphParentArray = [...graphParentAll];
-      console.log(graphParentArray);
 
       graphParentArray.forEach(graphParent => {
         let graphEq = graphParent.textContent.trim();
-        console.log("Raw equation: " + graphEq);
         let graphEmbed = document.createElement("div");
         graphEmbed.id = `graph-${graphParentArray.indexOf(graphParent)}`;
         graphParent.appendChild(graphEmbed);
@@ -42,23 +40,15 @@ export default apiInitializer((api) => {
           const yValues = xValues.map(function (x) {
             return expr.evaluate({x: x});
           });
-          console.log("x-values: " + xValues);
-          console.log("y-values: " + yValues);
           // render the plot using plotly
           const trace1 = {
             x: xValues,
             y: yValues,
             type: 'scatter'
           };
-          setTimeout(() => {
-            console.log("Waited 5 seconds!");
-          }, 5000); // 5000 milliseconds = 5 seconds
           const data = [trace1];
           Plotly.newPlot(graphEmbed, data);
-          console.log("Plotted");
-        } catch (err) {
-          console.error(err);
-        }
+        } catch (err) {}
       });
     }
   });
