@@ -54,7 +54,7 @@ export default apiInitializer((api) => {
             console.log("Waited 5 seconds!");
           }, 5000); // 5000 milliseconds = 5 seconds
           const data = [trace1];
-          Plotly.newPlot(`graph-${graphParentArray.indexOf(graphParent)}`, data);
+          Plotly.newPlot(graphEmbed, data);
           console.log("Plotted");
         } catch (err) {
           console.error(err);
