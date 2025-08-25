@@ -1,9 +1,9 @@
 {
-  "name": "Discourse Desmos Embed",
+  "name": "Discourse Graph Embed",
   "component": true,
   "authors": "NateDhaliwal",
   "about_url": "",
-  "license_url": "https://github.com/NateDhaliwal/discourse-desmos-embed/blob/main/LICENSE",
+  "license_url": "https://github.com/NateDhaliwal/discourse-graph-embed/blob/main/LICENSE",
   "learn_more": "",
   "theme_version": "0.0.1",
   "assets": {},
