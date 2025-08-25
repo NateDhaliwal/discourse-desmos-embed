@@ -24,11 +24,12 @@ export default apiInitializer((api) => {
       // loadScript("https://cdnjs.cloudflare.com/ajax/libs/function-plot/1.25.1/function-plot.js");
       let graphParentArray = [...graphParentAll];
       console.log(graphParentArray);
+
       graphParentArray.forEach(graphParent => {
         let graphEq = graphParent.textContent;
         console.log(typeof graphEq);
         let graphEmbed = document.createElement("div");
-        graphEmbed.id = "graph";
+        graphEmbed.id = `graph-${graphParentAll.indexOf(graphParent)}`;
         graphParent.appendChild(graphEmbed);
         
         try {
