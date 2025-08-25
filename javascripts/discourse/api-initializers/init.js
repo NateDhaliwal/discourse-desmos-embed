@@ -29,7 +29,7 @@ export default apiInitializer((api) => {
         let graphEq = graphParent.textContent;
         console.log(typeof graphEq);
         let graphEmbed = document.createElement("div");
-        graphEmbed.id = `graph-${graphParentAll.indexOf(graphParent)}`;
+        graphEmbed.id = `graph-${graphParentArray.indexOf(graphParent)}`;
         graphParent.appendChild(graphEmbed);
         
         try {
@@ -54,7 +54,7 @@ export default apiInitializer((api) => {
             console.log("Waited 5 seconds!");
           }, 5000); // 5000 milliseconds = 5 seconds
           const data = [trace1];
-          Plotly.newPlot(`graph-${graphParentAll.indexOf(graphParent)}`, data);
+          Plotly.newPlot(`graph-${graphParentArray.indexOf(graphParent)}`, data);
           console.log("Plotted");
         } catch (err) {
           console.error(err);
