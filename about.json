@@ -7,5 +7,9 @@
   "learn_more": "",
   "theme_version": "0.0.1",
   "assets": {},
-  "modifiers": {}
+  "modifiers": {
+    "svg_icons": [
+      "chart-line"
+    ]
+  }
 }
