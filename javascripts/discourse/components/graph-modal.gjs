@@ -42,7 +42,7 @@ export default class GraphModal extends Component {
   }
   
   <template>
-    <DModal @title={{this.modalTitle}} @closeModal={{@closeModal}} {{on "click" this.loadGraph}} id="graph-modal">
+    <DModal @title={{this.modalTitle}} @closeModal={{@closeModal}} {{on "load" this.loadGraph}} id="graph-modal">
       <div id={{this.graphEmbedId}}></div>
     </DModal>
   </template>
