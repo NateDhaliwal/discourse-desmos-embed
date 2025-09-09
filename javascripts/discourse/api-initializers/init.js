@@ -35,6 +35,12 @@ export default apiInitializer((api) => {
       graphParentArray.forEach((graphParent) => {
         if (settings.show_graph_in_modal) {
           let graphEq = graphParent.textContent.trim();
+          graphParent.classList.add("graph-eq-link");
+          graphParent.addEventListener("click", () => {
+            modal.show(GraphModal, {
+              model: { graphEq: graphEq }
+            });
+          });
         } else {
           // Create new `div` element to show graph in
           let graphEq = graphParent.textContent.trim();
