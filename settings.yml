@@ -3,5 +3,5 @@ graph_equation_placeholder:
   type: string
 
 show_graph_in_modal:
-  default: true
+  default: false
   type: boolean
