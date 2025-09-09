@@ -42,7 +42,13 @@ export default class GraphModal extends Component {
   }
   
   <template>
-    <DModal @title={{this.modalTitle}} @closeModal={{@closeModal}} {{on "load" this.loadGraph}} id="graph-modal">
+    <DModal @title={{this.modalTitle}} @closeModal={{@closeModal}} id="graph-modal">
+      <DButton
+        @icon="chart-line"
+        @action={{this.loadGraph}}
+        @label={{themePrefix "load_graph_button_label"}}
+        @title={{themePrefix "load_graph_button_title"}}
+      />
       <div id={{this.graphEmbedId}}></div>
     </DModal>
   </template>
