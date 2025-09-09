@@ -36,10 +36,9 @@ export default apiInitializer((api) => {
         if (settings.show_graph_in_modal) {
           let graphEq = graphParent.textContent.trim();
           graphParent.classList.add("graph-eq-link");
-          console.log(graphParentArray.indexOf(graphParent));
           graphParent.addEventListener("click", () => {
             modal.show(GraphModal, {
-              model: { graphEq: graphEq, graphIndex: graphParentArray.indexOf(graphParent), postEl: element }
+              model: { graphEq: graphEq, graphIndex: graphParentArray.indexOf(graphParent) }
             });
           });
         } else {
