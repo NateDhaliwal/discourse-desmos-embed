@@ -1,5 +1,5 @@
 import Component from "@glimmer/component";
-import { action } from "@ember/action";
+import { action } from "@ember/object";
 import { on } from "@ember/modifier";
 import DModal from "discourse/components/d-modal";
 
