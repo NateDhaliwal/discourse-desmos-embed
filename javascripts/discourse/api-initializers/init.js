@@ -1,7 +1,9 @@
+import GraphModal from "../components/graph-modal";
 import { apiInitializer } from "discourse/lib/api";
 import I18n from "discourse-i18n";
 
 export default apiInitializer((api) => {
+  const modal = api.container.lookup("service:modal");
   const currentLocale = I18n.currentLocale();
   I18n.translations[currentLocale].js.composer.graph_equation_placeholder =
     settings.graph_equation_placeholder;
@@ -31,35 +33,39 @@ export default apiInitializer((api) => {
 
       // Iterate, in case there are multiple graphs in a single post
       graphParentArray.forEach((graphParent) => {
-        // Create new `div` element to show graph in
-        let graphEq = graphParent.textContent.trim();
-        let graphEmbed = document.createElement("div");
-        graphEmbed.id = `graph-${graphParentArray.indexOf(graphParent)}`;
-        graphParent.appendChild(graphEmbed);
-
-        try {
-          // Compile the expression
-          const expression = graphEq;
-          const expr = math.compile(expression); // eslint-disable-line no-undef
-
-          // Evaluate the expression/equation repeatedly for different values of x
-          const xValues = math.range(-10, 10, 0.5).toArray(); // eslint-disable-line no-undef
-          const yValues = xValues.map(function (x) {
-            return expr.evaluate({ x });
-          });
-
-          // Render the plot using Plotly
-          const trace1 = {
-            x: xValues,
-            y: yValues,
-            type: "scatter",
-          };
-          const data = [trace1];
-
-          // Plot the graph
-          Plotly.newPlot(graphEmbed, data); // eslint-disable-line no-undef
-        } catch {
-          // Do nothing
+        if (settings.show_graph_in_modal) {
+          let graphEq = graphParent.textContent.trim();
+        } else {
+          // Create new `div` element to show graph in
+          let graphEq = graphParent.textContent.trim();
+          let graphEmbed = document.createElement("div");
+          graphEmbed.id = `graph-${graphParentArray.indexOf(graphParent)}`;
+          graphParent.appendChild(graphEmbed);
+  
+          try {
+            // Compile the expression
+            const expression = graphEq;
+            const expr = math.compile(expression); // eslint-disable-line no-undef
+  
+            // Evaluate the expression/equation repeatedly for different values of x
+            const xValues = math.range(-10, 10, 0.5).toArray(); // eslint-disable-line no-undef
+            const yValues = xValues.map(function (x) {
+              return expr.evaluate({ x });
+            });
+  
+            // Render the plot using Plotly
+            const trace1 = {
+              x: xValues,
+              y: yValues,
+              type: "scatter",
+            };
+            const data = [trace1];
+  
+            // Plot the graph
+            Plotly.newPlot(graphEmbed, data); // eslint-disable-line no-undef
+          } catch {
+            // Do nothing
+          }
         }
       });
     }
