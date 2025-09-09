@@ -39,7 +39,7 @@ export default apiInitializer((api) => {
           console.log(graphParentArray.indexOf(graphParent));
           graphParent.addEventListener("click", () => {
             modal.show(GraphModal, {
-              model: { graphEq: graphEq, graphIndex: graphParentArray.indexOf(graphParent) }
+              model: { graphEq: graphEq, graphIndex: graphParentArray.indexOf(graphParent), postEl: element }
             });
           });
         } else {
