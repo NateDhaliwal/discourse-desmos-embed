@@ -15,8 +15,7 @@ export default class GraphModal extends Component {
   @action
   loadGraph() {
     try {
-      console.log("This: " + this.args.model.postEl.getElementById(`graph-${this.args.model.graphIndex}`));
-      const graphEmbed = this.args.model.postEl.getElementById(`graph-${this.args.model.graphIndex}`);
+      const graphEmbed = document.getElementById(`graph-${this.args.model.graphIndex}`);
       // Compile the expression
       const expression = this.args.model.graphEq;
       const expr = math.compile(expression); // eslint-disable-line no-undef
