@@ -49,7 +49,7 @@ export default class GraphModal extends Component {
         @action={{this.loadGraph}}
         @label={{themePrefix "graph.load_graph_button_label"}}
         @title={{themePrefix "graph.load_graph_button_title"}}
-        class="btn-text btn-icon btn-flat"
+        class="btn-text btn-icon"
       />
       <div id={{this.graphEmbedId}}></div>
     </DModal>
