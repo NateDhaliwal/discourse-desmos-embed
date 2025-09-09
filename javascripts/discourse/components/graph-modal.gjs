@@ -1,6 +1,7 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/object";
 import { on } from "@ember/modifier";
+import DButton from "discourse/components/d-button";
 import DModal from "discourse/components/d-modal";
 
 export default class GraphModal extends Component {
@@ -48,6 +49,7 @@ export default class GraphModal extends Component {
         @action={{this.loadGraph}}
         @label={{themePrefix "graph.load_graph_button_label"}}
         @title={{themePrefix "graph.load_graph_button_title"}}
+        class="btn-text btn-icon btn-flat"
       />
       <div id={{this.graphEmbedId}}></div>
     </DModal>
