@@ -1,5 +1,6 @@
 import Component from "@glimmer/component";
 import { action } from "@ember/action";
+import { on } from "@ember/modifier";
 import DModal from "discourse/components/d-modal";
 
 export default class GraphModal extends Component {
