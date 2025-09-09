@@ -6,3 +6,4 @@ en:
     description: "Embed graphs into topics and replies"
     settings:
       graph_equation_placeholder: "Placeholder equation for graph"
+      show_graph_in_modal: "Show the graph in a modal popup instead of below the equation; causes the graph equation to be clickable to show the modal"
