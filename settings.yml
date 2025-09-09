@@ -4,4 +4,4 @@ graph_equation_placeholder:
 
 show_graph_in_modal:
   default: false
-  type: boolean
+  type: bool
