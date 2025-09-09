@@ -1,6 +1,8 @@
 en:
   graph:
     graph_button_title: "Insert Graph"
+    load_graph_button_label: "Load Graph"
+    load_graph_button_title: "Load Graph"
 
   theme_metadata:
     description: "Embed graphs into topics and replies"
