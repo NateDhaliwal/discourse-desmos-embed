@@ -37,8 +37,8 @@ export default class GraphModal extends Component {
 
       // Plot the graph
       Plotly.newPlot(graphEmbed, data); // eslint-disable-line no-undef
-    } catch {
-      // Do nothing
+    } catch (e) {
+      console.error(e);
     }
   }
   
