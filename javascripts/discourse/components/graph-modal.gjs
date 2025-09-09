@@ -15,7 +15,7 @@ export default class GraphModal extends Component {
   @action
   loadGraph() {
     try {
-      console.log(`${this.args.model.postEl}\n${this.args.model.graphIndex}\n${this.args.model.graphEq}`)
+      console.log(this.args.model.postEl.getElementById(`graph-${this.args.model.graphIndex}`))
       const graphEmbed = this.args.model.postEl.getElementById(`graph-${this.args.model.graphIndex}`);
       // Compile the expression
       const expression = this.args.model.graphEq;
