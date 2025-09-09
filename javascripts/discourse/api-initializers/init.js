@@ -38,7 +38,7 @@ export default apiInitializer((api) => {
           graphParent.classList.add("graph-eq-link");
           graphParent.addEventListener("click", () => {
             modal.show(GraphModal, {
-              model: { graphEq: graphEq }
+              model: { graphEq: graphEq, graphIndex: graphParentArray.indexOf(graphParent) }
             });
           });
         } else {
